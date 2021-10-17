@@ -1,6 +1,6 @@
 import {getAuth,signInWithPopup,GoogleAuthProvider,onAuthStateChanged, signOut} from 'firebase/auth';
 import { useEffect, useState } from 'react';
-import FirebaseInitialize from '../firebase/firebase.config';
+import FirebaseInitialize from '../firebase/firebase.init';
 FirebaseInitialize();
 const googleProvider = new GoogleAuthProvider();
 const useFirebase = () =>{
@@ -9,7 +9,7 @@ const useFirebase = () =>{
     //Store Error here
     const [error,setError] = useState({});
     const [isLoading,setIsLoading] = useState(true)
-    const auth = getAuth;
+    const auth = getAuth();
     // Handle Google Sign in
     const signInUsingGoogle = () =>{
         setIsLoading(true)
@@ -26,8 +26,7 @@ const useFirebase = () =>{
     };
     // Cheched Logged User information
     useEffect(()=>{
-        setIsLoading(true)
-        const unsubscribed = onAuthStateChanged (auth, loggedUser=>{
+        const unsubscribed = onAuthStateChanged (auth, (loggedUser)=>{
             if(loggedUser){
                 setUser(loggedUser)
             }
@@ -35,7 +34,7 @@ const useFirebase = () =>{
                 setUser({})
             }
         });
-        setIsLoading(false)
+        setIsLoading(false);
         return ()=> unsubscribed;
     },[auth]);
 

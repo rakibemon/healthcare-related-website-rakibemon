@@ -1,0 +1,9 @@
+.user-img{
+        max-width: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+}
+.logged-user-name{
+    position: relative;
+    top: 10px;
+}
