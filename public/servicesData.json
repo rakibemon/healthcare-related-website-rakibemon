@@ -1,0 +1,38 @@
+[
+    {
+      "id": 1,
+      "name": "Qualified Doctors",
+      "img": "https://content.presspage.com/uploads/1369/1920_stockimage-hospital.jpg?10000",
+      "description": "We have best qualified doctor for each department. They are Human immunity Medical physics Cell biology Cell division and heredity The human endocrine and nervous system. So just come to us make an appointment"
+    },
+    {
+      "id": 2,
+      "name": "Medical Counseling",
+      "img": "https://www.michelleelman.com/wp-content/uploads/2017/07/1.jpg",
+      "description": "genetic counseling in the nursing interventions classification, a nursing intervention defined as use of an interactive helping process focusing on assisting an individual, family, or group, manifesting or at risk for developing or transmitting a birth defect or genetic condition, to cope.lactation counseling in the nursing interventions classification, a nursing intervention defined as the use of an interactive helping process to assist in maintenance of successful breastfeeding."
+    },
+    {
+      "id": 3,
+      "name": "Emergency Services",
+      "img": "https://sethichildrenhospital.com/wp-content/uploads/2015/01/emergency_1.jpg",
+      "description": "We Provide an emergency medical service (or EMS) is a service providing out-of-hospital acute care and transport to definitive care, to patients with illnesses and injuries which the patient believes constitute a medical emergency."
+    },
+    {
+      "id": 4,
+      "name": "Blood Bank",
+      "img": "https://cdn.britannica.com/09/147309-050-70516926/Blood-bank-employee-blood.jpg",
+      "description": "We have a place where blood is collected from donors, typed, separated into components, stored, and prepared for transfusion to recipients. A blood bank may be a separate free-standing facility or part of a larger laboratory in a hospital."
+    },
+    {
+      "id": 5,
+      "name": "Operation Theater",
+      "img": "https://image.shutterstock.com/image-photo/malaysia-october-3-2018-image-260nw-1206489436.jpg",
+      "description": "We have an operating theater (also known as an operating room (OR), operating suite, or operation suite) is a facility within a hospital where surgical operations are carried out in an aseptic environment"
+    },
+    {
+      "id": 6,
+      "name": "Free Medicine",
+      "img": "https://i2-prod.liverpoolecho.co.uk/incoming/article16398329.ece/ALTERNATES/s615/3_PMR_SCU_220515_healthpills01.jpg",
+      "description": "The free-medicines-for-all scheme is very welcome, especially in the states where access to essential medicines is dismal,” says Batmanabane. “Hence people will start coming to the health facilities and using them — this is seen in Rajasthan, where I saw for myself what a world of difference a committed government is doing."
+    }
+  ]
