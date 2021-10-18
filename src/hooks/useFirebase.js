@@ -13,16 +13,7 @@ const useFirebase = () =>{
     // Handle Google Sign in
     const signInUsingGoogle = () =>{
         setIsLoading(true)
-        signInWithPopup(auth,googleProvider)
-        .then(result =>{
-            setUser(result.user)
-        })
-        .catch(error=>{
-            setError(error.message)
-        })
-        .finally(()=>{
-            setIsLoading(false)
-        })
+        return signInWithPopup(auth,googleProvider)
     };
     // Cheched Logged User information
     useEffect(()=>{
@@ -33,8 +24,8 @@ const useFirebase = () =>{
             else{
                 setUser({})
             }
+            setIsLoading(false);
         });
-        setIsLoading(false);
         return ()=> unsubscribed;
     },[auth]);
 
@@ -56,6 +47,9 @@ const useFirebase = () =>{
         user,
         error,
         isLoading,
+        setUser,
+        setError,
+        setIsLoading,
         signInUsingGoogle,
         logOut
 

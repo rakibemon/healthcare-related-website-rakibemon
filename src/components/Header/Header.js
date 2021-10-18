@@ -1,24 +1,27 @@
 import React from 'react';
 import { Container, Nav, Navbar, Button } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import useAuth from '../../hooks/useAuth';
 import './Header.css'
 const Header = () => {
-    const { user } = useAuth();
-    console.log(user);
+    const { user,logOut } = useAuth();
     return (
         <div>
-            <Navbar bg="light" expand="lg" fixed='top'>
+            <Navbar bg="dark" expand="lg" fixed='top'>
                 <Container>
-                    <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+                    <Navbar.Brand href="/home"> <h2 className='logo'>MEDI<span>CARE</span></h2></Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
-                            <NavLink style={{ padding: '8px' }} to='/'> Home</NavLink>
+                            <NavLink  className="link" style={{ padding: '8px' }} to='/'> Home</NavLink>
+                            <HashLink className="link" style={{ padding: '8px' }} to='/home#service'> Service</HashLink>
+                            <HashLink className="link" style={{ padding: '8px' }} to='/home#doctors'> Doctors</HashLink>
+                            <HashLink className="link" style={{ padding: '8px' }} to='/home#package'> Package</HashLink>
                             {user.displayName || user.email?
-                                <Button> Log out</Button>
+                                <Button onClick={logOut}> Log out</Button>
                                 :
-                                <NavLink style={{ padding: '8px' }} to='/login'> Login</NavLink>
+                                <NavLink className="link" style={{ padding: '8px' }} to='/login'> Login</NavLink>
                             }
                         </Nav>
                         <Nav className="ms-auto">
@@ -26,7 +29,7 @@ const Header = () => {
                                 (user.displayName || user.email) &&
                                 <div className='d-flex'>
                                     <p className='me-3 logged-user-name'>{user.displayName}</p>
-                                    <img className='user-img img-fluid' src={user.photoURL} alt={user.displayName +" Image"}/>
+                                    <img className='user-img' src={user.photoURL} alt={user.displayName +" Image"}/>
                                 </div>
                             }
                         </Nav>

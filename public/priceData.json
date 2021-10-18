@@ -1,0 +1,34 @@
+[
+    {
+        "id":1,
+        "name":"Basic",
+        "price":24.50,
+        "facility1":"Diagnostic Services",
+        "facility2":"Professional Consultation",
+        "facility3":"Tooth Implants"
+    },
+    {
+        "id":2,
+        "name":"Standard",
+        "price":34.50,
+        "facility1":"Surgical Extractions",
+        "facility2":"Professional Consultation",
+        "facility3":"Teeth Whitening"
+    },
+    {
+        "id":3,
+        "name":"Premium",
+        "price":54.50,
+        "facility1":"Professional Consultation",
+        "facility2":"5x checkup/month",
+        "facility3":"Surgical Extractions"
+    },
+    {
+        "id":4,
+        "name":"Basic",
+        "price":89.50,
+        "facility1":"Professional Consultation",
+        "facility2":"anytime checkup",
+        "facility3":"Tooth Implants"
+    }
+]

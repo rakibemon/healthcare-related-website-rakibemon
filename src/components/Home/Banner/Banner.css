@@ -1,0 +1,21 @@
+.home-bg{
+    margin-top: 60px;
+    background: url('https://preview.colorlib.com/theme/mediplus/images/xbg_3.jpg.pagespeed.ic.Wx917eesOz.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+}
+.hero-section{
+    display: flex;
+    align-items: center;
+    height: 80vh;
+}
+.hero-title{
+    margin-top: 0px;
+    font-size:48px;
+    font-weight: 700;
+}
+.hero-section p{
+    font-size: 24px;
+}

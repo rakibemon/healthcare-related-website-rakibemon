@@ -1,0 +1,26 @@
+[
+    {
+      "id": 1,
+      "name": "DR. BEATRICE PRIOR",
+      "img": "https://preview.colorlib.com/theme/medicare/images/xstaff-4.jpg.pagespeed.ic.-dnw1UWm_Y.webp",
+      "designation": "Dental Hygienist"
+    },
+    {
+      "id": 2,
+      "name": "DR. EDWARD DUGHLAS",
+      "img": "https://preview.colorlib.com/theme/medicare/images/xstaff-2.jpg.pagespeed.ic.oztGsJ5WoE.webp",
+      "designation": "Orthopedic Surgeon"
+    },
+    {
+      "id": 3,
+      "name": "DR. PETER PARKER",
+      "img": "https://preview.colorlib.com/theme/medicare/images/xstaff-3.jpg.pagespeed.ic.Fgk92-nbFh.webp",
+      "designation": "Health Care"
+    },
+    {
+      "id": 4,
+      "name": "DR. LIZA THOMAS",
+      "img": "https://preview.colorlib.com/theme/medicare/images/xstaff-1.jpg.pagespeed.ic.UQ0QPOtm9m.webp",
+      "designation": "Patient Services Manager"
+    }
+  ]

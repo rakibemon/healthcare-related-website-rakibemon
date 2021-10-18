@@ -1,11 +1,27 @@
 import React from 'react';
 import { Container, Form, Button, Row, Col } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useLocation,useHistory} from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import img from '../../img/signin-image.jpg';
 import './Login.css'
 const Login = () => {
-    const { signInUsingGoogle} = useAuth()
+    const { signInUsingGoogle,setUser,setError,setIsLoading} = useAuth();
+    const history = useHistory();
+    const location = useLocation();
+    const redirect_url = location.state?.from || '/home';
+    const handleSignIn = () =>{
+        signInUsingGoogle()
+        .then(result =>{
+            setUser(result.user);
+            history.push(redirect_url)
+        })
+        .catch(error=>{
+            setError(error.message)
+        })
+        .finally(()=>{
+            setIsLoading(false)
+        })
+    }
     return (
         <Container className='d-flex'>
             <Row className='d-flex justify-content-center align-items-center w-75 mx-auto login-row'>
@@ -14,7 +30,7 @@ const Login = () => {
                         <img src={img} alt="Login page" />
                     </figure>
                     <div className='mt-5'>
-                        <Link> Create an account</Link>
+                        <Link to='/register'> Create an account</Link>
                     </div>
                 </Col>
 
@@ -42,7 +58,7 @@ const Login = () => {
                             </Button>
                             <div className="d-flex mt-5 align-items-center">
                                 <p className='login-with'>Or log in With</p>
-                                <i onClick={signInUsingGoogle} className="fab fa-google-plus-square mx-4 login google"></i>
+                                <i onClick={handleSignIn} className="fab fa-google-plus-square mx-4 login google"></i>
                                 <i className="fab fa-facebook-square login facebook"></i>
                             </div>
                         </Form>

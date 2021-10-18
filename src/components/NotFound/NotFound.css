@@ -1,0 +1,11 @@
+.not-found{
+    background: url('../../img//404.jpg');
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.back-button{
+    position: absolute;
+    bottom: 40px;
+    left: 45%;
+}
