@@ -6,18 +6,26 @@ import useAuth from '../../hooks/useAuth';
 import regImg from '../../img/signup-image.jpg'
 
 const Registration = () => {
-    const { setUser, setError, error,setIsLoading, signInUsingGoogle, signInUsingFb, signInUsingEmail } = useAuth();
+    const { setUser, setError, error, setIsLoading, signInUsingGoogle, signInUsingFb, signInUsingEmail } = useAuth();
     const history = useHistory();
     const location = useLocation();
-    const [email,setEmail] = useState('');
-    const [password,setPassword] = useState('');
-    const handleEmail = (event) =>{
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    // Collect email
+    const handleEmail = (event) => {
         setEmail(event.target.value)
-    }
-    const handlePassword = (event) =>{
+    };
+
+    //Collect Pass
+    const handlePassword = (event) => {
         setPassword(event.target.value)
-    }
+    };
+
+    //Where user want to go or send him to home page
     const redirect_url = location.state?.from || '/home';
+
+    // Google Sign in
     const handleGoogleSignIn = () => {
         signInUsingGoogle()
             .then(result => {
@@ -31,6 +39,8 @@ const Registration = () => {
                 setIsLoading(false)
             })
     };
+
+    // Facebook Signin 
     const handleFbSignIn = () => {
         signInUsingFb()
             .then(result => {
@@ -44,11 +54,12 @@ const Registration = () => {
                 setIsLoading(false)
             })
     };
+
+    // Create user with Email and Password
     const handleRegister = (event) => {
         event.preventDefault();
         signInUsingEmail(email, password);
-      };
-    console.log(email,password);
+    };
     return (
         <Container className='d-flex sign'>
             <Row className='d-flex justify-content-center align-items-center w-75 mx-auto login-row'>

@@ -11,7 +11,7 @@ const TakingInfo = () => {
                 <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
                     <Form.Label column sm="2">Name</Form.Label>
                     <Col sm="10">
-                        <Form.Control style={{fontWeight:'700', color:'cadetblue'}} plaintext readOnly defaultValue={name} />
+                        <Form.Control style={{ fontWeight: '700', color: 'cadetblue' }} plaintext readOnly defaultValue={name} />
                     </Col>
                 </Form.Group>
                 <Row className="mb-3">

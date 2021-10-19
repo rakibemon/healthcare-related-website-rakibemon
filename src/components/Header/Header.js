@@ -5,7 +5,7 @@ import { HashLink } from 'react-router-hash-link';
 import useAuth from '../../hooks/useAuth';
 import './Header.css'
 const Header = () => {
-    const { user,logOut } = useAuth();
+    const { user, logOut } = useAuth();
     return (
         <div>
             <Navbar bg="dark" expand="lg" fixed='top'>
@@ -14,26 +14,28 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
-                            <NavLink  className="link" style={{ padding: '8px' }} to='/'> Home</NavLink>
+                            <NavLink className="link" style={{ padding: '8px' }} to='/'> Home</NavLink>
                             <HashLink className="link" style={{ padding: '8px' }} to='/home#service'> Service</HashLink>
                             <HashLink className="link" style={{ padding: '8px' }} to='/home#doctors'> Doctors</HashLink>
                             <HashLink className="link" style={{ padding: '8px' }} to='/home#package'> Package</HashLink>
-                            {user.displayName || user.email?
+                            {/* When User logged in "Logout button" when not Login & SignUp button */}
+                            {user.displayName || user.email ?
                                 <Button onClick={logOut}> Log out</Button>
                                 :
                                 <div style={{ padding: '8px' }}>
-                                    <NavLink className="link"  to='/login'> <Button>Log in</Button></NavLink>
+                                    <NavLink className="link" to='/login'> <Button>Log in</Button></NavLink>
                                     <span className='text-white mx-2'> or </span>
-                                    <NavLink className="link"  to='/reg'> <Button>SignUp</Button></NavLink>
+                                    <NavLink className="link" to='/reg'> <Button>SignUp</Button></NavLink>
                                 </div>
                             }
                         </Nav>
+                        {/* display logged user info */}
                         <Nav className="ms-auto">
                             {
                                 (user.displayName || user.email) &&
                                 <div className='d-flex'>
                                     <p className='me-3 logged-user-name'>{user.displayName}</p>
-                                    <img className='user-img' src={user.photoURL} alt={user.displayName +" Image"}/>
+                                    <img className='user-img' src={user.photoURL} alt={user.displayName + " Image"} />
                                 </div>
                             }
                         </Nav>

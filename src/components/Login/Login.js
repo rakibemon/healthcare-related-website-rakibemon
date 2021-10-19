@@ -1,52 +1,67 @@
 import React, { useState } from 'react';
 import { Container, Form, Button, Row, Col } from 'react-bootstrap';
-import { Link, useLocation,useHistory} from 'react-router-dom';
+import { Link, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import img from '../../img/signin-image.jpg';
 import './Login.css'
 const Login = () => {
-    const { signInUsingGoogle,setUser,error,setError,setIsLoading,signInUsingFb,handleLoginUsingEmail} = useAuth();
+    const { signInUsingGoogle, setUser, error, setError, setIsLoading, signInUsingFb, handleLoginUsingEmail } = useAuth();
     const history = useHistory();
     const location = useLocation();
-    const [email,setEmail] = useState('');
-    const [password,setPassword] = useState('');
-    const handleEmail = (event) =>{
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    //collect email
+    const handleEmail = (event) => {
         setEmail(event.target.value)
-    }
-    const handlePassword = (event) =>{
+    };
+
+    //collect password
+    const handlePassword = (event) => {
         setPassword(event.target.value)
     }
+
+    //where user wanted to go or send user to homepage
     const redirect_url = location.state?.from || '/home';
-    const handleGoogleSignIn = () =>{
+
+    //Google Sign in
+    const handleGoogleSignIn = () => {
         signInUsingGoogle()
-        .then(result =>{
-            setUser(result.user);
-            history.push(redirect_url)
-        })
-        .catch(error=>{
-            setError(error.message)
-        })
-        .finally(()=>{
-            setIsLoading(false)
-        })
+            .then(result => {
+                setUser(result.user);
+                history.push(redirect_url)
+            })
+            .catch(error => {
+                setError(error.message)
+            })
+            .finally(() => {
+                setIsLoading(false)
+            })
     };
-    const handleFbSignIn = () =>{
+
+    // Facebook Sign in
+    const handleFbSignIn = () => {
         signInUsingFb()
-        .then(result =>{
-            setUser(result.user);
-            history.push(redirect_url)
-        })
-        .catch(error=>{
-            setError(error.message)
-        })
-        .finally(()=>{
-            setIsLoading(false)
-        })
+            .then(result => {
+                setUser(result.user);
+                history.push(redirect_url)
+            })
+            .catch(error => {
+                setError(error.message)
+            })
+            .finally(() => {
+                setIsLoading(false)
+            })
     };
+
+    // Login using Email & Password
     const handleLogin = (event) => {
         event.preventDefault();
         handleLoginUsingEmail(email, password);
-      };
+        if (!error.length) {
+            history.push(redirect_url)
+        }
+    };
     return (
         <Container className='d-flex sign'>
             <Row className='d-flex justify-content-center align-items-center w-75 mx-auto login-row'>
@@ -81,7 +96,7 @@ const Login = () => {
                             <Button onClick={handleLogin} variant="info" type="submit" className='py-2 px-3 text-white'>
                                 Login
                             </Button>
-                                <p className='text-danger mt-4'> {error}</p>
+                            <p className='text-danger mt-4'> {error}</p>
                             <div className="d-flex mt-5 align-items-center">
                                 <p className='login-with'>Or log in With</p>
                                 <i onClick={handleGoogleSignIn} className="fab fa-google-plus-square mx-4 login google"></i>

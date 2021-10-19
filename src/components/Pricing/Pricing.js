@@ -3,12 +3,16 @@ import { Container, Row } from 'react-bootstrap';
 import Price from './Price';
 import './Pricing.css'
 const Pricing = () => {
-    const [pricing , setPricing] = useState([]);
-    useEffect(()=>{
+
+    //Store data
+    const [pricing, setPricing] = useState([]);
+
+    //Load data
+    useEffect(() => {
         fetch('/priceData.json')
-        .then(response=>response.json())
-        .then(data => setPricing(data))
-    },[]);
+            .then(response => response.json())
+            .then(data => setPricing(data))
+    }, []);
     return (
         <Container id='package'>
             <Row>

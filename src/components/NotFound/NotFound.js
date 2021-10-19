@@ -13,7 +13,7 @@ const NotFound = () => {
     return (
         <div className='not-found'>
             <div className='back-button'>
-             <Button onClick={goHomePage} variant='danger'> Go to Home </Button>
+                <Button onClick={goHomePage} variant='danger'> Go to Home </Button>
             </div>
         </div>
     );

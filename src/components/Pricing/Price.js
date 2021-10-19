@@ -3,16 +3,17 @@ import { Col, Button } from 'react-bootstrap';
 import { useHistory } from 'react-router';
 import './Pricing.css'
 const Price = ({ prise }) => {
-    const { name, price,facility1,facility2,facility3 } = prise || {};
+    //Got thsi data from Pricing components
+    const { name, price, facility1, facility2, facility3 } = prise || {};
     const history = useHistory()
-    const takingInfo = () =>{
+    const takingInfo = () => {
         history.push(`/info/${name}`)
     }
     return (
         <Col>
             <div className='price-card text-center p-4 mb-4'>
                 <h3 className='mb-4'>{name}</h3>
-                <p style={{color:'rgba(0, 0, 0, 0.6)'}}> <span className='only-price'>${price}</span> / season </p>
+                <p style={{ color: 'rgba(0, 0, 0, 0.6)' }}> <span className='only-price'>${price}</span> / season </p>
                 <ul className="list-unstyled price-list">
                     <li>{facility1}</li>
                     <li>{facility2}</li>

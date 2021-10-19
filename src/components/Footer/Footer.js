@@ -47,9 +47,9 @@ const Footer = () => {
                             <h4 style={{ fontWeight: '500' }}> Newsletter</h4>
                             <p className='thin-letter'>Subscribe our newsletter to get updates.</p>
                             <Form>
-                            <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Control type ="email" placeholder="Enter email" />
-                            </Form.Group>
+                                <Form.Group className="mb-3" controlId="formBasicEmail">
+                                    <Form.Control type="email" placeholder="Enter email" />
+                                </Form.Group>
                             </Form>
                             <br /> <br />
                             <Button variant="success">Subscribe</Button>

@@ -4,7 +4,8 @@ import useData from '../../../hooks/useData';
 import Service from '../Service/Service';
 import './Services.css'
 const Services = () => {
-    const {services} = useData();
+    //fetch data
+    const { services } = useData();
     return (
         <Container id='service'>
             <h2 className='service-title mb-4 text-center'>Our Services</h2>

@@ -1,23 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router';
-import {Button} from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import useData from '../../../hooks/useData';
 import './ServiceDetail.css'
 const ServiceDetail = () => {
-    const {serviceId} = useParams()
-    const {services} = useData();
+    const { serviceId } = useParams()
+    const { services } = useData();
     const [singleService, setSingleService] = useState({});
-    const history=useHistory()
-    const goBack = () =>{
+    const history = useHistory()
+    const goBack = () => {
         history.push('/home#service')
     };
-    useEffect(()=>{
-        if(services.length){
-            const foundService = services.find( service => service.id === parseInt(serviceId));
+    //find clicked data by id
+    useEffect(() => {
+        if (services.length) {
+            const foundService = services.find(service => service.id === parseInt(serviceId));
             setSingleService(foundService)
         }
-    },[services,serviceId]);
-    const {name,description,img} = singleService || {};
+    }, [services, serviceId]);
+    //got matched data
+    const { name, description, img } = singleService || {};
     return (
         <div className='service-details text-center mx-auto'>
             <figure>

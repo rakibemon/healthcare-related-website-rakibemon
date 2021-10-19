@@ -5,6 +5,7 @@ import useAuth from '../../hooks/useAuth';
 
 const PrivateRoute = ({ children, ...rest }) => {
     const { user, isLoading } = useAuth();
+    //If user login is not finished
     if (isLoading) {
         return <Spinner animation="grow" variant="warning" />
     }
@@ -20,7 +21,7 @@ const PrivateRoute = ({ children, ...rest }) => {
                         }
                         }
                     ></Redirect>
-                }>
+            }>
 
         </Route>
     );
