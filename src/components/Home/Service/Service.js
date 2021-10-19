@@ -18,7 +18,7 @@ const Service = (props) => {
                 <h3>{name}</h3>
                 <p>{description.slice(0, 120)}</p>
                 <div className='text-center'>
-                    <Button onClick={goServices} className='button'> See Details </Button>
+                    <Button onClick={goServices} className='button text-white'> See Details </Button>
                 </div>
             </div>
         </Col>
