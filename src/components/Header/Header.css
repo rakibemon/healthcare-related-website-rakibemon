@@ -1,3 +1,14 @@
+.auth-button{
+    background-color: #3089FC;
+    border-color: #3089FC;
+    transition: all 0.3s linear;
+    color: #fff;
+    transition: all 0.3s linear;
+}
+.auth-button:hover{
+    background-color: #FF8000 !important;
+    border-color: #FF8000 !important;
+}
 .user-img{
         max-width: 40px;
         border-radius: 50%;

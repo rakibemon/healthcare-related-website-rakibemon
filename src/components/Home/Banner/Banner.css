@@ -19,3 +19,12 @@
 .hero-section p{
     font-size: 24px;
 }
+@media only screen and (max-width: 600px) {
+    .hero-title{
+        font-size: 32px;
+        color: #fff;
+    }
+    .hero-section p{
+        font-size: 20px;
+    }
+}

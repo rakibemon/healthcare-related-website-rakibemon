@@ -14,7 +14,7 @@ const Doctors = () => {
     }, [])
     return (
         <Container id="doctors">
-            <Row className=''>
+            <Row className='g-3'>
                 <h2 className="text-center doctor-title">WELL EXPERIENCED DOCTORS</h2>
                 <p className="text-center doctor-subtitle">A small river named Duden flows by their place and supplies it with <br /> the necessary regelialia.</p>
                 {

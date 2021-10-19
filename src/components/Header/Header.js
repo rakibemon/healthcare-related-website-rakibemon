@@ -11,7 +11,7 @@ const Header = () => {
             <Navbar bg="dark" expand="lg" fixed='top'>
                 <Container>
                     <Navbar.Brand href="/home"> <h2 className='logo'>MEDI<span>CARE</span></h2></Navbar.Brand>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Toggle className='bg-white' aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
                             <NavLink className="link" style={{ padding: '8px' }} to='/'> Home</NavLink>
@@ -20,12 +20,12 @@ const Header = () => {
                             <HashLink className="link" style={{ padding: '8px' }} to='/home#package'> Package</HashLink>
                             {/* When User logged in "Logout button" when not Login & SignUp button */}
                             {user.displayName || user.email ?
-                                <Button onClick={logOut}> Log out</Button>
+                                <Button className='auth-button' onClick={logOut}> Log out</Button>
                                 :
                                 <div style={{ padding: '8px' }}>
-                                    <NavLink className="link" to='/login'> <Button>Log in</Button></NavLink>
+                                    <NavLink className="link" to='/login'> <Button className='auth-button'>Log in</Button></NavLink>
                                     <span className='text-white mx-2'> or </span>
-                                    <NavLink className="link" to='/reg'> <Button>SignUp</Button></NavLink>
+                                    <NavLink className="link" to='/reg'> <Button className='auth-button'>SignUp</Button></NavLink>
                                 </div>
                             }
                         </Nav>

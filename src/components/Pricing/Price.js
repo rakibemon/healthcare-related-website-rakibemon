@@ -10,7 +10,7 @@ const Price = ({ prise }) => {
         history.push(`/info/${name}`)
     }
     return (
-        <Col>
+        <Col xs={12} md={6} lg={3}>
             <div className='price-card text-center p-4 mb-4'>
                 <h3 className='mb-4'>{name}</h3>
                 <p style={{ color: 'rgba(0, 0, 0, 0.6)' }}> <span className='only-price'>${price}</span> / season </p>
