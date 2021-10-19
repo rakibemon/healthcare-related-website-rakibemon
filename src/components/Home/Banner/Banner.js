@@ -3,7 +3,7 @@ import { Col, Container, Row, Button } from 'react-bootstrap';
 import './Banner.css'
 const Banner = () => {
     return (
-        <div className='home-bg'>
+        <div className='home-bg' id='banner'>
             <Container>
                 <Row className='hero-section'>
                     <Col xs={12} md={12}>

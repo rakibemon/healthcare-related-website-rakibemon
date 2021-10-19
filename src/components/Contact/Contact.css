@@ -1,0 +1,15 @@
+.contact{
+    margin-top:40px ;
+    background: #f8f9fa;
+    width: 100%;
+}
+.contact img{
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    background-color: #fff;
+}
+.contact-button:hover{
+    background-color: #FF8000 !important;
+    border-color: #FF8000 !important;
+}

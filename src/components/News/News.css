@@ -1,0 +1,21 @@
+.news{
+    padding-top: 140px;
+    padding-bottom: 60px;
+}
+.news img{
+    border-radius: 20px;
+}
+.title:hover{
+    color: #FF8000;
+}
+.orange-color{
+    color: #FF8000;
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 16px;
+}
+.news-button:hover{
+    color: #FF8000 !important;
+    background-color: #fff !important;
+    border-color:#FF8000 !important;
+}

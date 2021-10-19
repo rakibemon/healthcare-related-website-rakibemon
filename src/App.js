@@ -10,6 +10,8 @@ import TakingInfo from './components/TakingInfo/TakingInfo';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import NotFound from './components/NotFound/NotFound';
 import Registration from './components/Registration/Registration';
+import News from './components/News/News';
+import Contacts from './components/Contact/Contacts';
 
 function App() {
   return (
@@ -47,6 +49,18 @@ function App() {
               <TakingInfo></TakingInfo>
               <Footer></Footer>
             </PrivateRoute>
+            <Route exact path='/news'>
+              <Header />
+              <News/>
+              <Footer></Footer>
+            </Route>
+            <Route exact path='/contact'>
+              <Header />
+              <Contacts/>
+              <Footer></Footer>
+            </Route>
+
+
             <Route path='*'>
               <NotFound></NotFound>
             </Route>

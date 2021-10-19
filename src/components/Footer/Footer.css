@@ -35,7 +35,7 @@
     color: #fff;
 }
 .link:hover{
-    color: darkorange;
+    color: #FF8000;
 }
 
 @media only screen and (max-width:600px){

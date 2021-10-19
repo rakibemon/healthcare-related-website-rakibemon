@@ -1,0 +1,26 @@
+[
+    {
+      "id": 1,
+      "logo": "https://i.ibb.co/ts7sX1V/location.png",
+      "name": "ADDRESS",
+      "description": "House#1062, Banani, Dhaka"
+    },
+    {
+      "id": 2,
+      "logo": "https://i.ibb.co/zX7g0M2/phone.png",
+      "name": "CONTACT NUMBER",
+      "description": 225037301
+    },
+    {
+      "id": 3,
+      "logo": "https://i.ibb.co/W6RVRbb/email.png",
+      "name": "EMAIL ADDRESS",
+      "description": "info@yoursite.com"
+    },
+    {
+      "id": 4,
+      "logo": "https://i.ibb.co/GphhVtt/world-wide-web.png",
+      "name": "WEBSITE",
+      "description": "yoursite.com"
+    }
+  ]
