@@ -65,11 +65,11 @@ const Login = () => {
     return (
         <Container className='d-flex sign'>
             <Row className='d-flex justify-content-center align-items-center w-75 mx-auto login-row'>
-                <Col xs={12} md={6}>
+                <Col xs={{span:12, order: 'last' }} md={{span:6, order: 'first' }}>
                     <figure>
-                        <img src={img} alt="Login page" />
+                        <img className='img-fluid log-img' src={img} alt="Login page" />
                     </figure>
-                    <div className='mt-5'>
+                    <div className='my-3'>
                         <Link to='/reg'> Create an account</Link>
                     </div>
                 </Col>
@@ -77,8 +77,8 @@ const Login = () => {
 
                 <Col xs={12} md={6}>
                     <div>
-                        <Form className='w-75'>
-                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form className='form'>
+                            <Form.Group className="mb-3" controlId="formBasicEmailLogin">
                                 <Form.Label>Email address</Form.Label>
                                 <Form.Control onChange={handleEmail} type="email" placeholder="Enter email" />
                                 <Form.Text className="text-muted">

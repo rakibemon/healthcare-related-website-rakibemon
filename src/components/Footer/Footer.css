@@ -38,3 +38,9 @@
     color: darkorange;
 }
 
+@media only screen and (max-width:600px){
+    .footer{
+        margin-top: 60px;
+    }
+}
+

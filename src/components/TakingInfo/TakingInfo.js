@@ -1,13 +1,13 @@
 import React from 'react';
 import { Col, Form, Row, Button, Container } from 'react-bootstrap';
 import { useParams } from 'react-router';
-
+import './TakingInfo.css';
 const TakingInfo = () => {
     const { name } = useParams();
     return (
         <Container className='d-flex justify-content-center align-items-center' style={{ marginTop: '100px', height: '60vh' }}>
             <Form>
-                <h1 className='text-center mb-4'> Fill up this form </h1>
+                <h1 className='text-center mb-4 info-title'> Fill up this form </h1>
                 <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
                     <Form.Label column sm="2">Name</Form.Label>
                     <Col sm="10">

@@ -3,7 +3,8 @@ import { Col, Container, Form, Row, Button } from 'react-bootstrap';
 import { useHistory, useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
-import regImg from '../../img/signup-image.jpg'
+import regImg from '../../img/signup-image.jpg';
+import './Registration.css'
 
 const Registration = () => {
     const { setUser, setError, error, setIsLoading, signInUsingGoogle, signInUsingFb, signInUsingEmail } = useAuth();
@@ -65,9 +66,9 @@ const Registration = () => {
             <Row className='d-flex justify-content-center align-items-center w-75 mx-auto login-row'>
                 <Col xs={12} md={6}>
                     <div>
-                        <Form className='w-75'>
-                            <Form.Group className="mb-3" controlId="formBasicEmail">
-                                <Form.Label className='requried'>Email address</Form.Label>
+                        <Form>
+                            <Form.Group className="mb-3" controlId="formBasicEmailReg">
+                                <Form.Label className='requried reg-email'>Email address</Form.Label>
                                 <Form.Control onChange={handleEmail} type="email" placeholder="Enter email" />
                                 <Form.Text className="text-muted">
                                     We'll never share your email with anyone else.
@@ -102,9 +103,9 @@ const Registration = () => {
 
                 <Col xs={12} md={6}>
                     <figure>
-                        <img src={regImg} alt="Login page" />
+                        <img className='img-fluid reg-img' src={regImg} alt="Reg page" />
                     </figure>
-                    <div className='mt-5'>
+                    <div className='mt-5 have-account'>
                         <Link to='/login'> Already have account?</Link>
                     </div>
                 </Col>
