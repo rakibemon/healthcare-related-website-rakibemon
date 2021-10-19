@@ -58,14 +58,14 @@ const Login = () => {
     const handleLogin = (event) => {
         event.preventDefault();
         handleLoginUsingEmail(email, password);
-        if (!error.length) {
+        if (!error) {
             history.push(redirect_url)
         }
     };
     return (
         <Container className='d-flex sign'>
             <Row className='d-flex justify-content-center align-items-center w-75 mx-auto login-row'>
-                <Col xs={{span:12, order: 'last' }} md={{span:6, order: 'first' }}>
+                <Col xs={{ span: 12, order: 'last' }} md={{ span: 6, order: 'first' }}>
                     <figure>
                         <img className='img-fluid log-img' src={img} alt="Login page" />
                     </figure>
@@ -96,7 +96,7 @@ const Login = () => {
                             <Button onClick={handleLogin} variant="info" type="submit" className='py-2 px-3 text-white'>
                                 Login
                             </Button>
-                            <p className='text-danger mt-4'> {error}</p>
+                            {error ? <p className='text-danger mt-4'> {error}</p> : ''}
                             <div className="d-flex mt-5 align-items-center">
                                 <p className='login-with'>Or log in With</p>
                                 <i onClick={handleGoogleSignIn} className="fab fa-google-plus-square mx-4 login google"></i>

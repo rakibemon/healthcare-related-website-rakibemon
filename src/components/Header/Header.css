@@ -15,6 +15,7 @@
     background-color: #3089FC;
     border-color: #3089FC;
     transition: all 0.3s linear;
+    padding: 10px 20px !important;
     color: #fff;
     transition: all 0.3s linear;
 }

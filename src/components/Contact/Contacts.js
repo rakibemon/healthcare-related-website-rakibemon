@@ -21,6 +21,7 @@ const Contacts = () => {
             </Row>
             <Row className='d-flex justify-content-start align-items-center mt-5'>
                 <Col xs={12} md={6}>
+                    {/* Later We will add google Api here */}
                     <figure>
                         <img className='img-fluid' src={mapImg} alt="" />
                     </figure>
