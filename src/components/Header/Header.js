@@ -21,7 +21,11 @@ const Header = () => {
                             {user.displayName || user.email?
                                 <Button onClick={logOut}> Log out</Button>
                                 :
-                                <NavLink className="link" style={{ padding: '8px' }} to='/login'> Login</NavLink>
+                                <div style={{ padding: '8px' }}>
+                                    <NavLink className="link"  to='/login'> <Button>Log in</Button></NavLink>
+                                    <span className='text-white mx-2'> or </span>
+                                    <NavLink className="link"  to='/reg'> <Button>SignUp</Button></NavLink>
+                                </div>
                             }
                         </Nav>
                         <Nav className="ms-auto">

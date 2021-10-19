@@ -9,6 +9,7 @@ import ServiceDetail from './components/Home/ServiceDetail/ServiceDetail';
 import TakingInfo from './components/TakingInfo/TakingInfo';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import NotFound from './components/NotFound/NotFound';
+import Registration from './components/Registration/Registration';
 
 function App() {
   return (
@@ -34,6 +35,11 @@ function App() {
             <Route exact path='/login'>
               <Header />
               <Login></Login>
+              <Footer></Footer>
+            </Route>
+            <Route exact path='/reg'>
+              <Header />
+              <Registration />
               <Footer></Footer>
             </Route>
             <PrivateRoute exact path='/info/:name'>
