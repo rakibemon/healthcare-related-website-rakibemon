@@ -13,17 +13,17 @@ const Header = () => {
     }
     return (
         <div>
-            <Navbar style={{ backgroundColor: '#E3E3E3' }} expand="lg" fixed='top'>
+            <Navbar style={{ backgroundColor: '#E3E3E3' }} expand="lg" fixed='top'  collapseOnSelect={true}>
                 <Container>
                     <Navbar.Brand href="/home"> <h2 className='logo'>MEDI<span>CARE</span></h2></Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
 
 
-                        <Nav className="me-auto d-flex justify-content-start align-items-center">
+                        <Nav className="me-auto d-flex justify-content-start align-items-center" collapseOnSelect>
                             <NavHashLink activeStyle={activeStyle} className="nav-link" to='/home#banner'> Home</NavHashLink>
 
-                            <NavHashLink activeStyle={activeStyle} className="nav-link" style={{ padding: '8px' }} to='/home#service'> Service</NavHashLink>
+                            <NavHashLink activeStyle={activeStyle} className="nav-link" style={{ padding: '8px' }} to='/home#services'> Service</NavHashLink>
 
                             <NavHashLink activeStyle={activeStyle} className="nav-link" style={{ padding: '8px' }} to='/home#doctors'> Doctors</NavHashLink>
 

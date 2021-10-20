@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Form, Button, Row, Col } from 'react-bootstrap';
 import { Link, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
@@ -10,6 +10,11 @@ const Login = () => {
     const location = useLocation();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    // Change the title when go on a different route
+    useEffect(()=>{
+        document.title='login';
+      },[]);
 
     //collect email
     const handleEmail = (event) => {

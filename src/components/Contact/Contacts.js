@@ -10,6 +10,13 @@ const Contacts = () => {
             .then(response => response.json())
             .then(data => setContacts(data))
     }, []);
+
+     //change the title when change the route
+     useEffect(()=>{
+        document.title='Contact Us';
+      },[]);
+
+
     return (
         <Container>
             <Row className='g-4 d-flex justify-content-start align-items-center' style={{ marginTop: '140px' }}>

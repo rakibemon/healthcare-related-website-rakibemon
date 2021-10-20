@@ -7,7 +7,7 @@ const Services = () => {
     //fetch data
     const { services } = useData();
     return (
-        <Container id='service'>
+        <Container id='services'>
             <h2 className='service-title mb-4 text-center'>Our Services</h2>
             <Row className='g-5'>
                 {

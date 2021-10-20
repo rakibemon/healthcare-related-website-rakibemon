@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Col, Form, Row, Button, Container } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import './TakingInfo.css';
 const TakingInfo = () => {
+
+    //change the title when change the route
+    useEffect(()=>{
+        document.title='User info';
+      },[]);
+
+
+
     const { name } = useParams();
     return (
         <Container className='d-flex justify-content-center align-items-center' style={{ marginTop: '100px', height: '60vh' }}>

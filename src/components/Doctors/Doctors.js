@@ -11,7 +11,8 @@ const Doctors = () => {
         fetch('/doctorData.json')
             .then(response => response.json())
             .then(data => setDoctors(data))
-    }, [])
+    }, []);
+
     return (
         <Container id="doctors">
             <Row className='g-3'>

@@ -51,12 +51,12 @@ function App() {
             </PrivateRoute>
             <Route exact path='/news'>
               <Header />
-              <News/>
+              <News />
               <Footer></Footer>
             </Route>
             <Route exact path='/contact'>
               <Header />
-              <Contacts/>
+              <Contacts />
               <Footer></Footer>
             </Route>
 

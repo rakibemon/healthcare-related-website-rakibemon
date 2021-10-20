@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Col, Container, Form, Row, Button } from 'react-bootstrap';
 import { useHistory, useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
@@ -78,6 +78,13 @@ const Registration = () => {
         updateUserProfile(name)
 
     };
+
+     //change the title when change the route
+     useEffect(()=>{
+        document.title='Registration';
+      },[]);
+
+
     return (
         <Container className='d-flex sign'>
             <Row className='d-flex justify-content-center align-items-center w-75 mx-auto login-row'>

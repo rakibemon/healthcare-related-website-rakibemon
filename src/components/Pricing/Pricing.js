@@ -13,6 +13,8 @@ const Pricing = () => {
             .then(response => response.json())
             .then(data => setPricing(data))
     }, []);
+
+
     return (
         <Container id='package'>
             <Row>

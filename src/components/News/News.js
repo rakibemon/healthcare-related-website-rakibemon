@@ -9,6 +9,11 @@ const News = () => {
         .then(response => response.json())
         .then(data => setNews(data))
     },[]);
+     //change the title when change the route
+     useEffect(()=>{
+        document.title='News';
+      },[]);
+
 
     return (
         <Container>
