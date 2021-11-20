@@ -7,13 +7,17 @@ const PrivateRoute = ({ children, ...rest }) => {
     const { user, isLoading } = useAuth();
     //If user login is not finished
     if (isLoading) {
-        return <Spinner animation="grow" variant="warning" />
+        return (
+            <div className='text-center'>
+                <Spinner style={{paddingTop:'100px'}} animation="grow" variant="warning" />
+            </div>
+        )
     }
     return (
         <Route
             {...rest}
             render={({ location }) =>
-                user.email ? children :
+                user.email || user.displayName ? children :
                     <Redirect
                         to={{
                             pathname: '/login',

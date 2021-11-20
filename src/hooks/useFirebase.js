@@ -23,29 +23,12 @@ const useFirebase = () => {
     };
     //Handle Email Sign in
     const signInUsingEmail = (email, password) => {
-        createUserWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                console.log(userCredential.user);
-                setUser(userCredential.user);
-            })
-            .catch((error) => {
-                setError(error.message)
-            })
-            .finally(() => {
-                setIsLoading(false)
-            })
+        return createUserWithEmailAndPassword(auth, email, password)
     };
     //Sign in using Email Pass
     const handleLoginUsingEmail = (email, password) => {
         setIsLoading(true)
-        signInWithEmailAndPassword(auth, email, password)
-            .then(userCredential => {
-                setUser(userCredential.user)
-            })
-            .catch(error => {
-                setError(error.message)
-            })
-            .finally(() => setIsLoading(false))
+        return signInWithEmailAndPassword(auth, email, password)
     }
     // Cheched Logged User information
     useEffect(() => {

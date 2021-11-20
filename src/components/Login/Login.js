@@ -49,6 +49,7 @@ const Login = () => {
         signInUsingFb()
             .then(result => {
                 setUser(result.user);
+                console.log(result.user);
                 history.push(redirect_url)
             })
             .catch(error => {
@@ -61,11 +62,22 @@ const Login = () => {
 
     // Login using Email & Password
     const handleLogin = (event) => {
+        handleLoginUsingEmail(email, password)
+        .then(userCredential => {
+            setUser(userCredential.user);
+            setError('');
+            if (!error) {
+                history.push(redirect_url)
+                setError('');
+            }
+        })
+        .catch(error => {
+            setError(error.message)
+        })
+        .finally(() => {
+            setIsLoading(false);
+        })
         event.preventDefault();
-        handleLoginUsingEmail(email, password);
-        if (!error) {
-            history.push(redirect_url)
-        }
     };
     return (
         <Container className='d-flex sign'>
@@ -85,7 +97,7 @@ const Login = () => {
                         <Form className='form'>
                             <Form.Group className="mb-3" controlId="formBasicEmailLogin">
                                 <Form.Label>Email address</Form.Label>
-                                <Form.Control onChange={handleEmail} type="email" placeholder="Enter email" />
+                                <Form.Control required onChange={handleEmail} type="email" placeholder="Enter email" />
                                 <Form.Text className="text-muted">
                                     We'll never share your email with anyone else.
                                 </Form.Text>
@@ -93,7 +105,7 @@ const Login = () => {
 
                             <Form.Group className="mb-3" controlId="formBasicPassword">
                                 <Form.Label>Password</Form.Label>
-                                <Form.Control onChange={handlePassword} type="password" placeholder="Password" />
+                                <Form.Control required onChange={handlePassword} type="password" placeholder="Password" />
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="formBasicCheckbox">
                                 <Form.Check type="checkbox" label="Remember me" />

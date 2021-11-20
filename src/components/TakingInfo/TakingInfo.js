@@ -9,7 +9,7 @@ const TakingInfo = () => {
         document.title='User info';
       },[]);
 
-
+    // Store info of patient
 
     const { name } = useParams();
     return (

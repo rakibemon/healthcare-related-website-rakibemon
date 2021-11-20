@@ -29,6 +29,7 @@ const Registration = () => {
     const handlePassword = (event) => {
         if ((event.target.value).match(passwordRegExp)) {
             setPassword(event.target.value)
+            setError('')
         }
         else {
             setError('Enter Valid Password')
@@ -74,7 +75,20 @@ const Registration = () => {
     // Create user with Email and Password
     const handleRegister = (event) => {
         event.preventDefault();
-        signInUsingEmail(email, password);
+        signInUsingEmail(email, password)
+        .then((userCredential) => {
+            setUser(userCredential.user);
+            history.push(redirect_url)
+        })
+        .catch((error) => {
+            setError(error.message)
+        })
+        .finally(() => {
+            setIsLoading(false)
+        });
+
+
+
         updateUserProfile(name)
 
     };
@@ -101,10 +115,6 @@ const Registration = () => {
                             <Form.Group className="mb-3" controlId="formBasicName">
                                 <Form.Label>Name</Form.Label>
                                 <Form.Control onBlur={handleName} type="text" placeholder="Enter Name" />
-                            </Form.Group>
-                            <Form.Group controlId="formFile" className="mb-3">
-                                <Form.Label>Upload Your Photo</Form.Label>
-                                <Form.Control type="file" />
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="formBasicPassword">

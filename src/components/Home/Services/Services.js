@@ -9,7 +9,7 @@ const Services = () => {
     return (
         <Container id='services'>
             <h2 className='service-title mb-4 text-center'>Our Services</h2>
-            <Row className='g-5'>
+            <Row className='g-4'>
                 {
                     services.map(service => <Service key={service.id} service={service}></Service>)
                 }
